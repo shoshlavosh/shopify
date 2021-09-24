@@ -3,7 +3,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+app = Flask(__name__) 
 db = SQLAlchemy()
 
 class User(db.Model):
@@ -18,7 +18,7 @@ class User(db.Model):
     password = db.Column(db.String)
 
     #relationship
-    images = db.relationship("Image", back_populates="user")
+    # images = db.relationship("Image", back_populates="user")
 
     def __repr__(self):
         """Show info about user"""
@@ -38,10 +38,10 @@ class Image(db.Model):
     image_name = db.Column(db.String)
     image_description = db.Column(db.String)
     date_added = db.Column(db.DateTime)
-    size_in_mb = db.Column(db.Boolean)
+    size_in_mb = db.Column(db.Integer)
 
     #relationship
-    users = db.relationship("User", back_populates="image")
+    # users = db.relationship("User", back_populates="image")
 
     def __repr__(self):
         """Show info about image"""

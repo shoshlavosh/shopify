@@ -5,8 +5,9 @@ from datetime import datetime
 from random import choice, randint #for testing
 
 import crud
-# from model import User, Image
 import model
+from model import User, Image, app
+
 
 #drop and recreate the database
 os.system('dropdb images')
@@ -28,7 +29,7 @@ for n in range(10):
 for n in range(10):
     image_name = f"{n} test image"
     image_description = f"{n} test image description"
-    date_added = '2021-01-01'
+    date_added = "2021-01-01"
     size_in_mb = n
 
 
