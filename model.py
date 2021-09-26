@@ -17,9 +17,6 @@ class User(db.Model):
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
 
-    #relationship
-    # images = db.relationship("Image", back_populates="user")
-
     def __repr__(self):
         """Show info about user"""
         return f'<User user_id={self.user_id} email={self.email}>'
@@ -39,9 +36,6 @@ class Image(db.Model):
     image_description = db.Column(db.String)
     date_added = db.Column(db.DateTime)
     size_in_mb = db.Column(db.Integer)
-
-    #relationship
-    # users = db.relationship("User", back_populates="image")
 
     def __repr__(self):
         """Show info about image"""
