@@ -39,7 +39,7 @@ class Image(db.Model):
 
     def __repr__(self):
         """Show info about image"""
-        return f'<Image image_id={self.image_id} image_name={self.image_name} image_description={self.image_description}>'
+        return f'<Image image_id={self.image_id} image_name={self.image_name} image_description={self.image_description} size_in_mb={self.size_in_mb}>'
 
 
 def connect_to_db(app, db_uri="postgresql:///images", echo=True):
