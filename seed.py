@@ -32,7 +32,6 @@ for n in range(10):
     date_added = "2021-01-01"
     size_in_mb = n
 
-
     image = crud.create_image(image_name, image_description,
             date_added, size_in_mb)
 

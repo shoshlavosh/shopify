@@ -8,7 +8,7 @@ def create_user(email, password):
     user = User(email=email, password=password)
 
     #check to see if email and password are the correct data types 
-    #before adding user to the database
+    #before adding & committing user to the database
     assert type(email) == str
     assert type(password) == str
 
@@ -45,10 +45,11 @@ def create_image(image_name, image_description,
     image = Image(image_name=image_name, image_description=image_description,
             date_added=date_added, size_in_mb=size_in_mb)
 
-    #check to see if image name, description, and size are the correct 
-    #data types before adding image to the database
+    #check to see if image name, description, date, and size are the 
+    #correct data types before adding & committing image to the database
     assert type(image_name) == str
     assert type(image_description) == str
+    assert type(date_added) == str
     assert type(size_in_mb) == int
 
     db.session.add(image)
@@ -68,6 +69,8 @@ def image_search(keyword):
 
     images = get_images()
 
+    #this seems to only return one image - in the future, I'd like to 
+    #rewrite it so that it returns all images that match the keyword
     for image in images:
         if keyword in image.image_description or keyword in image.image_name:
             return image

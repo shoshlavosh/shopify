@@ -10,3 +10,5 @@ Install frameworks & libraries:
 Seed the database with fake images & users:
 >python3 seed.py
 
+To run "is_user1()" test in tests.py, enter the following in the command line: 
+>python3 -m doctest -v tests.py
